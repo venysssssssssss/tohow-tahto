@@ -1,26 +1,14 @@
 import os
+
 import bcrypt
+import click
 from dotenv import load_dotenv
-from flask import (
-    Flask,
-    flash,
-    redirect,
-    render_template,
-    request,
-    session,
-    url_for,
-)
-from flask_login import (
-    LoginManager,
-    UserMixin,
-    current_user,
-    login_user,
-    logout_user,
-    login_required,
-)
+from flask import (Flask, flash, redirect, render_template, request, session,
+                   url_for)
+from flask_login import (LoginManager, UserMixin, login_required, login_user,
+                         logout_user)
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
-import click
 
 load_dotenv()
 
@@ -39,10 +27,14 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(80), nullable=False)  # Store hashed password
+    password_hash = db.Column(
+        db.String(80), nullable=False
+    )  # Store hashed password
 
     def set_password(self, password):
-        self.password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        self.password_hash = bcrypt.hashpw(
+            password.encode('utf-8'), bcrypt.gensalt()
+        )
 
     def check_password(self, password):
         return bcrypt.checkpw(password.encode('utf-8'), self.password_hash)
@@ -53,13 +45,12 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@app.cli.command("initdb")
+@app.cli.command('initdb')
 def initdb_command():
     """Initialize the database."""
-    click.echo("Initializing the database")
-    with app.app_context():
-        db.create_all()
-    click.echo("Database initialized")
+    click.echo('Initializing the database')
+    db.create_all()
+    click.echo('Database initialized')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -144,5 +135,3 @@ def ftplat():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    initdb_command()
-    
