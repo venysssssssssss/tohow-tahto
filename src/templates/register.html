@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        .back-arrow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Adicionando bloco para exibir mensagens flash -->
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-danger" role="alert">
+      {{ messages[0] }}
+    </div>
+  {% endif %}
+{% endwith %}
+
+    <a href="/" class="back-arrow"><i class="bi bi-arrow-left"></i></a>
+
+    <div class="login-box">
+        <h2>Registrar</h2>
+        <form action="/register" method="POST">
+            <div class="user-box">
+                <input type="text" name="username" id="username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="email" id="email" required="">
+                <label>E-mail</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" id="password" required="">
+                <label>Password</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="confirm-password" id="confirm-password" required="">
+                <label>Confirm password</label>
+            </div>
+            <button type="submit" class="register-btn-r">Registrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
