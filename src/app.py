@@ -119,7 +119,7 @@ def index():
 def logout():
     session.clear()
     return redirect(url_for('login'))
-
+    print("oi")
 
 @app.route('/tools')
 @login_required
