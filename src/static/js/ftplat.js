@@ -24,3 +24,21 @@ $('.contact-form').find('.form-control').each(function() {
       }, 300);
     }
   })
+
+  function formatDate(input) {
+    // Remove qualquer caractere não numérico
+    var inputValue = input.value.replace(/\D/g, '');
+    
+    // Adiciona a barra após o segundo dígito para o dia e o mês
+    if (inputValue.length > 2 && inputValue.charAt(2) !== '/') {
+      inputValue = inputValue.slice(0, 2) + '/' + inputValue.slice(2);
+    }
+    
+    // Adiciona a barra após o quinto dígito para o ano
+    if (inputValue.length > 5 && inputValue.charAt(5) !== '/') {
+      inputValue = inputValue.slice(0, 5) + '/' + inputValue.slice(5);
+    }
+    
+    // Limita a entrada a 10 caracteres
+    input.value = inputValue.slice(0, 10);
+  }

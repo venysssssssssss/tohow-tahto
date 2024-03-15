@@ -3,10 +3,22 @@ import os
 import bcrypt
 import click
 from dotenv import load_dotenv
-from flask import (Flask, flash, redirect, render_template, request, session,
-                   url_for)
-from flask_login import (LoginManager, UserMixin, login_required, login_user,
-                         logout_user)
+from flask import (
+    Flask,
+    flash,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
+from flask_login import (
+    LoginManager,
+    UserMixin,
+    login_required,
+    login_user,
+    logout_user,
+)
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 
@@ -119,7 +131,7 @@ def index():
 def logout():
     session.clear()
     return redirect(url_for('login'))
-    print("oi")
+
 
 @app.route('/tools')
 @login_required

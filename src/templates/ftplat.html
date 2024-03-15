@@ -1,52 +1,161 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - RESPONSIVE MATERIAL DESIGN CONTACT FORM </title>
+  <title>FT-PLAT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="static\css\ftplat.css">
-
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="static\css\ftplat.css">
+  <style>
+    /* Adicionando estilo para a seta de voltar */
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
 <!-- partial:index.partial.html -->
-<h1> Responsive Material Design Form 
-  <small>Material Design delivers a cleaner and flatter user interface</small>
+<!-- Adicionando seta de voltar -->
+<a href="/tools" class="back-arrow">&#8592;</a>
+<h1> ESPECIFICAÇÃO DA DEMANDA 
+  <small>Informações necessárias para solicitar uma demanda de fast-tracking</small>
 </h1>
 <section class="contact-wrap">
   <form action="" class="contact-form">
     <div class="col-sm-6">
       <div class="input-block">
-        <label for="">First Name</label>
-        <input type="text" class="form-control">
+        <label for="">Título da Demanda *</label>
+        <input type="text" class="form-control" required>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="input-block">
-        <label for="">Last Name</label>
-        <input type="text" class="form-control">
+        <label for="">SOL do Projeto *</label>
+        <input type="text" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Líder *</label>
+        <input type="text" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-sm-6 text-center">
+      <div class="input-block">
+        <label for="start-date">Data início *</label>
+        <input type="text" class="form-control text-center" id="start-date" maxlength="10" onkeyup="formatDate(this)" required>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block">
-        <label for="">Email</label>
-        <input type="text" class="form-control">
+        <label for="vendor">Fornecedor</label>
+        <select class="form-control" id="vendor">
+          <option value="genesys">Genesys</option>
+          <option value="avaya">Avaya</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Célula *</label>
+        <input type="text" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Quantidade de PAs *</label>
+        <input type="text" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Gerente de Rel / Op *</label>
+        <input type="text" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Responsável Oi *</label>
+        <input type="text" class="form-control" required>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block">
-        <label for="">Message Subject</label>
-        <input type="text" class="form-control">
+        <label for="vendor">UN Beneficiada</label>
+        <select class="form-control" id="vendor">
+          <option value="Atendimento">Atendimento</option>
+          <option value="Técnico">Técnico</option>
+          <option value="Retenção">Retenção</option>
+          <option value="Projetos e experiência do cliente">Projetos e experiência do cliente</option>
+          <option value="Estratégia do negócio e finanças">Estratégia do negócio e finanças</option>
+          <option value="Gente">Gente</option>
+          <option value="TI">TI</option>
+          <option value="Oi-DRC">Oi-DRC</option>
+          <option value="Auditoria">Auditoria</option>
+        </select>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block textarea">
-        <label for="">Drop your message here</label>
+        <label for="">Descrição</label>
         <textarea rows="3" type="text" class="form-control"></textarea>
       </div>
     </div>
     <div class="col-sm-12">
-      <button class="square-button">Send</button>
+      <div class="input-block textarea">
+        <label for="">Justificativa</label>
+        <textarea rows="3" type="text" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">Benefício esperado</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">Impacto caso não seja executado</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="vendor">UN Beneficiada</label>
+        <select class="form-control" id="vendor">
+          <option value=""></option>
+          <option value="Atendimento">Criar novo(s) skill(s)</option>
+          <option value="Técnico">Roteamento</option>
+          <option value="Retenção">RP Entrada: Transferência Humana (Outras EPS) 0800</option>
+          <option value="Projetos e experiência do cliente">Transferência huamana (Tahto)</option>
+          <option value="Estratégia do negócio e finanças">RP Saida: Transferência humana (Outra EPS)</option>
+          <option value="Gente">Alterar configuração skill(Rotamanager)</option>
+          <option value="TI">Priorização de chamada(Fura fila)</option>
+          <option value="Oi-DRC">Transbordo</option>
+          <option value="Auditoria">Campanha</option>
+          <option value="Oi-DRC">Alterar horário de atendimento</option>
+          <option value="Auditoria">Consultas RP</option>
+          <option value="Oi-DRC">Transferência com Checklist</option>
+          <option value="Auditoria">Dica atendente</option>
+          <option value="Oi-DRC">Bloqueio de RP</option>
+          <option value="Auditoria">Licenças VDI</option>
+          <option value="Oi-DRC">Receber chamada com consulta</option>
+          <option value="Auditoria">Alterar pausa callback</option>
+          <option value="Oi-DRC">Cochicho</option>
+          <option value="Auditoria">Estratégia de transferência</option>
+          <option value="Oi-DRC">Skata</option>
+          <option value="Auditoria">Demanda Vonix</option>
+          <option value="Oi-DRC">Bloqueio de por contexto</option>
+          <option value="Auditoria">PÓS Routing - De/Para</option>
+          <option value="Oi-DRC">OrigFlex</option>
+        </select>
+      </div>
+    <div class="col-sm-12">
+      <button class="square-button">Concluir</button>
     </div>
   </form>
 </section>
@@ -54,11 +163,10 @@
 <!-- follow me template -->
 <div class="made-with-love">
   Made with 
-  <i>♥</i> by 
-  <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+  <i>@Tahto</i>
 </div>
 <!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="static\js\ftplat.js"></script>
-
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="static\js\ftplat.js"></script>
 </body>
 </html>
