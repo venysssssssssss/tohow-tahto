@@ -10,4 +10,4 @@ def init_driver():
         WebDriver: An instance of the Edge WebDriver.
     """
     service = init_service()
-    return webdriver.Edge(service=service)
+    return webdriver.Chrome(service=service)

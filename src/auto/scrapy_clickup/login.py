@@ -27,7 +27,9 @@ class ClickupLogin:
 
             # Encontre o campo de senha e insira a senha
             password_input = self.wait.until(
-                EC.visibility_of_element_located((By.ID, 'login-password-input'))
+                EC.visibility_of_element_located(
+                    (By.ID, 'login-password-input')
+                )
             )
             password_input.send_keys(self.password)
 
@@ -41,7 +43,6 @@ class ClickupLogin:
 
         except Exception as e:
             print(f'Ocorreu um erro: {e}')
-
 
     def check_element(self, xpath):
         try:

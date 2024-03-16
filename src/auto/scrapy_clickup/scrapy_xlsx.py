@@ -1,4 +1,5 @@
 import time
+
 import pyautogui
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -40,21 +41,21 @@ class ScrapyXlsx:
                 '//*[@id="app-root"]/cu-app-shell/cu-manager/div[1]/div/div/main/cu-dashboard/div/cu-views-bar-container/cu2-views-bar/div[3]/div/cu-dropdown-list-item[5]/button/div/div/cu-export-view/div/div/div/div',
             ).click()
 
-
             # Primeiro clique
             pyautogui.click(x=1026, y=270)
             time.sleep(2)
 
             # Segundo clique
-            pyautogui.click(x=978, y=360)
+            pyautogui.click(x=1027, y=370)
             time.sleep(2)
 
             # Terceiro clique
-            pyautogui.click(x=982, y=704)
+            pyautogui.click(x=1023, y=700)
             time.sleep(2)
 
+            # Quarto clique
             pyautogui.click(x=1056, y=741)
 
             time.sleep(4)
         except Exception as e:
-            print(f"An error occurred: {str(e)}")
+            print(f'An error occurred: {str(e)}')

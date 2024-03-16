@@ -8,6 +8,4 @@ def init_service():
     Returns:
         Service: A Service object for the Microsoft Edge WebDriver.
     """
-    return Service(
-        r'src\auto\msedgedriver.exe'
-    )
+    return Service(r'src\auto\chromedriver.exe')
