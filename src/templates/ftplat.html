@@ -25,7 +25,7 @@
   <small>Informações necessárias para solicitar uma demanda de fast-tracking</small>
 </h1>
 <section class="contact-wrap">
-  <form action="" class="contact-form">
+  <form id="form-options" action="/process_demand" method="post" class="contact-form">
     <div class="col-sm-6">
       <div class="input-block">
         <label for="">Título da Demanda *</label>
@@ -86,76 +86,35 @@
     <div class="col-sm-12">
       <div class="input-block">
         <label for="vendor">UN Beneficiada</label>
-        <select class="form-control" id="vendor">
-          <option value="Atendimento">Atendimento</option>
-          <option value="Técnico">Técnico</option>
-          <option value="Retenção">Retenção</option>
-          <option value="Projetos e experiência do cliente">Projetos e experiência do cliente</option>
-          <option value="Estratégia do negócio e finanças">Estratégia do negócio e finanças</option>
-          <option value="Gente">Gente</option>
-          <option value="TI">TI</option>
-          <option value="Oi-DRC">Oi-DRC</option>
-          <option value="Auditoria">Auditoria</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="input-block textarea">
-        <label for="">Descrição</label>
-        <textarea rows="3" type="text" class="form-control"></textarea>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="input-block textarea">
-        <label for="">Justificativa</label>
-        <textarea rows="3" type="text" class="form-control"></textarea>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="input-block">
-        <label for="">Benefício esperado</label>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="input-block">
-        <label for="">Impacto caso não seja executado</label>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="input-block">
-        <label for="vendor">UN Beneficiada</label>
-        <select class="form-control" id="vendor">
-          <option value=""></option>
-          <option value="Atendimento">Criar novo(s) skill(s)</option>
-          <option value="Técnico">Roteamento</option>
-          <option value="Retenção">RP Entrada: Transferência Humana (Outras EPS) 0800</option>
-          <option value="Projetos e experiência do cliente">Transferência huamana (Tahto)</option>
-          <option value="Estratégia do negócio e finanças">RP Saida: Transferência humana (Outra EPS)</option>
-          <option value="Gente">Alterar configuração skill(Rotamanager)</option>
-          <option value="TI">Priorização de chamada(Fura fila)</option>
-          <option value="Oi-DRC">Transbordo</option>
-          <option value="Auditoria">Campanha</option>
-          <option value="Oi-DRC">Alterar horário de atendimento</option>
-          <option value="Auditoria">Consultas RP</option>
-          <option value="Oi-DRC">Transferência com Checklist</option>
-          <option value="Auditoria">Dica atendente</option>
-          <option value="Oi-DRC">Bloqueio de RP</option>
-          <option value="Auditoria">Licenças VDI</option>
-          <option value="Oi-DRC">Receber chamada com consulta</option>
-          <option value="Auditoria">Alterar pausa callback</option>
-          <option value="Oi-DRC">Cochicho</option>
-          <option value="Auditoria">Estratégia de transferência</option>
-          <option value="Oi-DRC">Skata</option>
-          <option value="Auditoria">Demanda Vonix</option>
-          <option value="Oi-DRC">Bloqueio de por contexto</option>
-          <option value="Auditoria">PÓS Routing - De/Para</option>
-          <option value="Oi-DRC">OrigFlex</option>
+        <select class="form-control" id="options_ft" name="options_ft">
+          <option value="Criar novo(s) skill(s)">Criar novo(s) skill(s)</option>
+          <option value="Roteamento">Roteamento</option>
+          <option value="RP Entrada: Transferência Humana (Outras EPS) 0800">RP Entrada: Transferência Humana (Outras EPS) 0800</option>
+          <option value="Transferência huamana (Tahto)">Transferência huamana (Tahto)</option>
+          <option value="RP Saida: Transferência humana (Outra EPS)">RP Saida: Transferência humana (Outra EPS)</option>
+          <option value="Alterar configuração skill(Rotamanager)">Alterar configuração skill(Rotamanager)</option>
+          <option value="Priorização de chamada(Fura fila)">Priorização de chamada(Fura fila)</option>
+          <option value="Transbordo">Transbordo</option>
+          <option value="Campanha">Campanha</option>
+          <option value="Alterar horário de atendimento">Alterar horário de atendimento</option>
+          <option value="Consultas RP">Consultas RP</option>
+          <option value="Transferência com Checklist">Transferência com Checklist</option>
+          <option value="Dica atendente">Dica atendente</option>
+          <option value="Bloqueio de RP">Bloqueio de RP</option>
+          <option value="Licenças VDI">Licenças VDI</option>
+          <option value="Receber chamada com consulta">Receber chamada com consulta</option>
+          <option value="Alterar pausa callback">Alterar pausa callback</option>
+          <option value="Cochicho">Cochicho</option>
+          <option value="Estratégia de transferência">Estratégia de transferência</option>
+          <option value="Skata">Skata</option>
+          <option value="Demanda Vonix">Demanda Vonix</option>
+          <option value="Bloqueio de por contexto">Bloqueio de por contexto</option>
+          <option value="PÓS Routing - De/Para">PÓS Routing - De/Para</option>
+          <option value="OrigFlex">OrigFlex</option>
         </select>
       </div>
     <div class="col-sm-12">
-      <button class="square-button">Concluir</button>
+      <button type="submit" class="square-button">Concluir</button>
     </div>
   </form>
 </section>
