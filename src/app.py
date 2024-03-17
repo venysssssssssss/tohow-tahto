@@ -3,22 +3,10 @@ import os
 import bcrypt
 import click
 from dotenv import load_dotenv
-from flask import (
-    Flask,
-    flash,
-    redirect,
-    render_template,
-    request,
-    session,
-    url_for,
-)
-from flask_login import (
-    LoginManager,
-    UserMixin,
-    login_required,
-    login_user,
-    logout_user,
-)
+from flask import (Flask, flash, redirect, render_template, request, session,
+                   url_for)
+from flask_login import (LoginManager, UserMixin, login_required, login_user,
+                         logout_user)
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 
@@ -143,6 +131,22 @@ def tools():
 @login_required
 def ftplat():
     return render_template('ftplat.html')
+
+
+@app.route('/process_demand', methods=['POST'])
+@login_required
+def process_demand():
+    option_selected = request.form.get('options_ft')
+
+    # Renderiza o template HTML apropriado com base na opção selecionada
+    if option_selected == 'Criar novo(s) skill(s)':
+        return render_template('datatable_ft.html')
+    elif option_selected == 'Roteamento':
+        return render_template('roteamento.html')
+    # Adicione mais casos conforme necessário para cada opção
+
+    # Se a opção selecionada não for reconhecida, redirecione para uma página de erro ou retorne uma mensagem de erro
+    return 'Opção não reconhecida'
 
 
 if __name__ == '__main__':
