@@ -1,6 +1,5 @@
 import os
 import time
-
 from login import ClickupLogin
 from scrapy_xlsx import ScrapyXlsx
 from selenium import webdriver
@@ -13,9 +12,7 @@ if __name__ == '__main__':
     download_dir = os.path.join(current_dir, 'data\clickup_sheet_negocios')
 
     options = Options()
-    prefs = {
-        'download.default_directory': download_dir
-    }
+    prefs = {'download.default_directory': download_dir}
     options.add_experimental_option('prefs', prefs)
     # Instantiate the driver only once in the main
     driver = webdriver.Chrome(options=options)
@@ -34,11 +31,6 @@ if __name__ == '__main__':
     scrapy.go_to_extract()
     time.sleep(4)
     # Check the presence of the element
-    print(
-        credentials.check_element(
-            '//*[@id="app-root"]/cu-app-shell/cu-manager/div[1]/div/div/main/cu-dashboard/div/cu-views-bar-container/cu2-views-bar/cu-location-header-lazy-wrapper/cu-location-header/div/div[2]/cu-automation-button/span/button/cu-automation-count-label'
-        )
-    )
 
     # Wait for a sufficient time before closing the browser
     time.sleep(200)  # 10 seconds of wait
