@@ -127,10 +127,10 @@ def tools():
     return render_template('tools.html')
 
 
-@app.route('/ftplat')
+@app.route('/datatable_ft')
 @login_required
 def ftplat():
-    return render_template('ftplat.html')
+    return render_template('datatable_ft.html')
 
 
 @app.route('/process_demand', methods=['POST'])
@@ -140,9 +140,9 @@ def process_demand():
 
     # Renderiza o template HTML apropriado com base na opção selecionada
     if option_selected == 'Criar novo(s) skill(s)':
-        return render_template('datatable_ft.html')
+        return render_template('novo_skill_ft.html')
     elif option_selected == 'Roteamento':
-        return render_template('roteamento.html')
+        return render_template('datatable_ft.html')
     # Adicione mais casos conforme necessário para cada opção
 
     # Se a opção selecionada não for reconhecida, redirecione para uma página de erro ou retorne uma mensagem de erro
