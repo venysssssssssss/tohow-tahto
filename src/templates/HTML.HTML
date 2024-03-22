@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static\css\datatable.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+   <title>Registro - Demanda responsiva</title>
+</head>
+<body>
+    <div class="container">
+        <header>Especificação de demanda</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Detalhes de projeto</span>
+
+                    <div class="fields">
+                      <div class="input-field">
+                          <label>Título da demanda</label>
+                          <input type="text" placeholder="Título" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>SOL do projeto</label>
+                            <input type="text" placeholder="SOL do projeto" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Data de início</label>
+                            <input type="date" placeholder="Insira a data" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Líder</label>
+                            <input type="text" placeholder="Nome do líder" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>Célula</label>
+                          <input type="number" placeholder="Célula" required>
+                      </div>
+
+                        <div class="input-field">
+                          <label>Fornecedor</label>
+                          <select required>
+                              <option disabled selected>Selecione o fornecedor</option>
+                              <option>Genesys</option>
+                              <option>Avaya</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Detalhes operacionais</span>
+
+                    <div class="fields">
+                        <div    class="input-field">
+                          <label>Quantidade de PA's</label>
+                          <input type="number" placeholder="PA's" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gerente de Rel / Op</label>
+                            <input type="text" placeholder="Nome do gerente" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Responsável Oi</label>
+                            <input type="text" placeholder="Nome responsável Oi" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>UN Beneficiada</label>
+                          <select id="options_ft" name="options_ft">
+                            <option disabled selected>Selecione a UN</option>
+                            <option value="Criar novo(s) skill(s)">Criar novo(s) skill(s)</option>
+                            
+                          </select>
+                              
+                        </div>
+
+                        <div class="input-field">
+                          <label>Ações Genesys</label>
+                          <select id="options_ft" name="options_ft">
+                            <option disabled selected>------</option>
+                            <option value="Criar novo(s) skill(s)">Criar novo(s) skill(s)</option>
+                          </select>
+                              
+                        </div>
+
+                        <div class="input-field">
+                          <label>Ações Avaya</label>
+                          <select id="options_ft" name="options_ft">
+                            <option disabled selected>------</option>
+                            <option value="Criar novo(s) skill(s)">Criar novo(s) skill(s)</option>
+                          </select>
+                              
+                        </div>
+
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Address Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Address Type</label>
+                            <input type="text" placeholder="Permanent or Temporary" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nationality</label>
+                            <input type="text" placeholder="Enter nationality" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>State</label>
+                            <input type="text" placeholder="Enter your state" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>District</label>
+                            <input type="text" placeholder="Enter your district" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Block Number</label>
+                            <input type="number" placeholder="Enter block number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Ward Number</label>
+                            <input type="number" placeholder="Enter ward number" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details family">
+                    <span class="title">Family Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Father Name</label>
+                            <input type="text" placeholder="Enter father name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mother Name</label>
+                            <input type="text" placeholder="Enter mother name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Grandfather</label>
+                            <input type="text" placeholder="Enter grandfther name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Spouse Name</label>
+                            <input type="text" placeholder="Enter spouse name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Father in Law</label>
+                            <input type="text" placeholder="Father in law name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mother in Law</label>
+                            <input type="text" placeholder="Mother in law name" required>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+                        
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script src="static\js\datatable_ft.jsscript.js"></script>
+</body>
+</html>
